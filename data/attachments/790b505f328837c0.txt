@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/exercises' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEyLTA1VDE3OjMzOjA2LjQxMTA2MyIsInVzZXJfaWQiOiJkNDU4ZjNmMy0zZjVhLTRhY2UtOGJhMC0yZjZkMWZkNmYwODYifQ.lffIZv4F9D6qzNi_BlELg7qz0yOgaTfjZwUhZsgJudE' \
+  -H 'content-length: 349' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Child lose artist treatment tax leg yes.","courseId":"c972d2c7-8843-4634-a0f1-5c64f2713445","maxScore":64,"minScore":5,"orderIndex":39,"description":"Lead yourself political myself nation. People inside strong.\nCentral small administration discover think. Medical value no southern thousand. Tough the almost.","estimatedTime":"10 weeks"}'

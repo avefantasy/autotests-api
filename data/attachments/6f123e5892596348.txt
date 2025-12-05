@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEyLTA1VDE3OjMzOjA3LjY0NjM2MCIsInVzZXJfaWQiOiJiMDg1MGM3Ny01ODk5LTQwMmYtOWFkZC04YmYyNmNiZjdhZjIifQ.blMJWMS8PTbeRi-xJgDCfJV-DjlX2Kt01DRroCAcnr4' \
+  -H 'content-length: 420' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Resource town speak arrive speech score support.","maxScore":73,"minScore":14,"description":"Answer job do item particular book spend. Than now white court. We ten rock big.\nEasy page half environment. Series game citizen fine final soldier.\nCentral other never a eat.","estimatedTime":"8 weeks","previewFileId":"9fe401fa-6303-40ee-8704-ae62da5ce635","createdByUserId":"b0850c77-5899-402f-9add-8bf26cbf7af2"}'

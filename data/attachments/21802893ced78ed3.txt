@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEyLTA1VDE3OjMzOjA1LjI0NTM3NSIsInVzZXJfaWQiOiI3MmEyYjg1OC02YjVjLTQyMWEtOTRiMC03OTQwNWQwMDhhMDYifQ.6a-R0y2HVsvYGhmhd4URWDtEaQESZvlK33Ou9rNktUg' \
+  -H 'content-length: 444' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Agreement dream show mention record tonight work.","maxScore":64,"minScore":12,"description":"Scientist should collection true thank with. Source society end vote yard manager.\nFocus according activity traditional imagine others protect air. Wait lawyer third investment start change language.","estimatedTime":"7 weeks","previewFileId":"6907bcf8-14c2-406a-bd0d-93513a453bd1","createdByUserId":"72a2b858-6b5c-421a-94b0-79405d008a06"}'

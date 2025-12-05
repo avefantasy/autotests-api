@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEyLTA1VDE3OjMzOjA2LjQxMTA2MyIsInVzZXJfaWQiOiJkNDU4ZjNmMy0zZjVhLTRhY2UtOGJhMC0yZjZkMWZkNmYwODYifQ.lffIZv4F9D6qzNi_BlELg7qz0yOgaTfjZwUhZsgJudE' \
+  -H 'content-length: 320' \
+  -H 'content-type: application/json' \
+  -d '{"title":"New wind team study.","maxScore":82,"minScore":4,"description":"Long with mean home.\nHead open anything manage. Exist charge speak suggest compare growth worry actually.","estimatedTime":"7 weeks","previewFileId":"0b54d939-10ba-48ec-b2a5-bfceac430fb1","createdByUserId":"d458f3f3-3f5a-4ace-8ba0-2f6d1fd6f086"}'

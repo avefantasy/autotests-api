@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEyLTA1VDE3OjMzOjA4LjI0NzgzOSIsInVzZXJfaWQiOiIzNjVjMDg2ZS04NzM4LTQwYmUtYmUwZC03ZTE3MWU5NWVmYjMifQ.joFlGdDk912WjSSU87-XqmLTvb58UO9wKmNVZ1_Ja8A' \
+  -H 'content-length: 360' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Entire future just doctor.","maxScore":63,"minScore":12,"description":"Good area theory letter wind edge serious stand. Another southern much catch my consider claim firm. Dinner form fund table skin hot color.","estimatedTime":"1 weeks","previewFileId":"ca9c9d5c-65dd-43e6-82f3-f3f222efee0e","createdByUserId":"365c086e-8738-40be-be0d-7e171e95efb3"}'
