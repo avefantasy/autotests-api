@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEyLTA1VDE3OjQxOjA2LjUyNDczOSIsInVzZXJfaWQiOiI5YTQ3NTM0Yi03ZTk4LTQyMDItODIwNC1mOTBkYjRhODVlYzMifQ.-d6B6chQvzxFBIk1yqk3guJgQqym1ir2kBk7D8Qmh94' \
+  -H 'content-length: 384' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Human health production start whose maybe show consumer.","maxScore":78,"minScore":16,"description":"Trouble idea believe two man local teach knowledge. Act apply itself attorney talk. Trip up approach east while ability offer appear.","estimatedTime":"2 weeks","previewFileId":"dcd03ca3-66ae-4284-b8da-56842b6a9b39","createdByUserId":"9a47534b-7e98-4202-8204-f90db4a85ec3"}'

@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEyLTA1VDE3OjQxOjA3Ljc1Mjg3OSIsInVzZXJfaWQiOiJhYjU1YTA4YS0xM2YyLTQ1NWYtYjMzMS00Y2FjMzYyODY0MmQifQ.DcykD_d-g35Nk_8ktXfSKph8k3Ay3rVMjr3EYl_ixE4' \
+  -H 'content-length: 373' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Account outside lot thing my.","maxScore":73,"minScore":8,"description":"Action mean leg certain run hear build. Late out drive.\nBoth exist own resource. Program certain much sense scene. High begin receive forget usually.","estimatedTime":"6 weeks","previewFileId":"d55290ed-4738-461a-823e-8da995ef7d31","createdByUserId":"ab55a08a-13f2-455f-b331-4cac3628642d"}'

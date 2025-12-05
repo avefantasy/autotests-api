@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEyLTA1VDE3OjQxOjA1LjM0NzgyOSIsInVzZXJfaWQiOiI4YTQxOThjNy04Y2MzLTRkMzQtYjhhYy01OGQyN2M4ZTEyMTAifQ.cbd8IKhLg8ApvbY6bAYAXjdZH3ZHDQLxCAMVCcrxZIk' \
+  -H 'content-length: 397' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Hospital travel international.","maxScore":79,"minScore":10,"description":"Lead area strong mind choose join degree society. Article research thing car. Bar involve crime represent. Traditional cut finally out before.\nAway character east of kind.","estimatedTime":"7 weeks","previewFileId":"aec237a6-c37b-47b7-a2a6-4dc89f8564bc","createdByUserId":"8a4198c7-8cc3-4d34-b8ac-58d27c8e1210"}'

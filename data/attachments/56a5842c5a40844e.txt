@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/exercises' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEyLTA1VDE3OjQxOjA3Ljc1Mjg3OSIsInVzZXJfaWQiOiJhYjU1YTA4YS0xM2YyLTQ1NWYtYjMzMS00Y2FjMzYyODY0MmQifQ.DcykD_d-g35Nk_8ktXfSKph8k3Ay3rVMjr3EYl_ixE4' \
+  -H 'content-length: 379' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Station your between perform including.","courseId":"c7f3f378-95b0-497c-9fe1-e2d3ac207e2e","maxScore":54,"minScore":29,"orderIndex":4,"description":"Loss always become listen. Face attack point risk including. Physical picture factor house candidate main force.\nPolice suffer interview pressure dinner since. Wife its technology adult risk.","estimatedTime":"9 weeks"}'
