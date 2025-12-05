@@ -1,0 +1,19 @@
+[32mINFO    [0m HTTP_CLIENT:event_hooks.py:28 Make POST request to http://localhost:8000/api/v1/users
+[32mINFO    [0m HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8000/api/v1/users
+[32mINFO    [0m HTTP_CLIENT:event_hooks.py:28 Make POST request to http://localhost:8000/api/v1/authentication/login
+[32mINFO    [0m HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8000/api/v1/authentication/login
+[32mINFO    [0m HTTP_CLIENT:event_hooks.py:28 Make POST request to http://localhost:8000/api/v1/files
+[32mINFO    [0m HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8000/api/v1/files
+[32mINFO    [0m HTTP_CLIENT:event_hooks.py:28 Make POST request to http://localhost:8000/api/v1/courses
+[32mINFO    [0m HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8000/api/v1/courses
+[32mINFO    [0m HTTP_CLIENT:event_hooks.py:28 Make PATCH request to http://localhost:8000/api/v1/courses/f1e01dc1-c7c6-40f8-87f5-1b8816fd9d18
+[32mINFO    [0m HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8000/api/v1/courses/f1e01dc1-c7c6-40f8-87f5-1b8816fd9d18
+[32mINFO    [0m BASE_ASSERTIONS:base.py:19 Check that response status code equals to 200
+[32mINFO    [0m COURSES_ASSERTIONS:courses.py:24 Check update course response
+[32mINFO    [0m BASE_ASSERTIONS:base.py:38 Check that "title" equals to Individual no scene this ever.
+[32mINFO    [0m BASE_ASSERTIONS:base.py:38 Check that "max_score" equals to 53
+[32mINFO    [0m BASE_ASSERTIONS:base.py:38 Check that "min_score" equals to 10
+[32mINFO    [0m BASE_ASSERTIONS:base.py:38 Check that "description" equals to Make degree book level before probably. Drop other left also least.
+By protect husband half tough. Institution fast national new on.
+[32mINFO    [0m BASE_ASSERTIONS:base.py:38 Check that "estimated_time" equals to 3 weeks
+[32mINFO    [0m SCHEMA_ASSERTIONS:schema.py:22 Validating JSON schema

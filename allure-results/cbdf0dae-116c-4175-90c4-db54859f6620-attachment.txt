@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEyLTA1VDEzOjU4OjAzLjE2MDAzOCIsInVzZXJfaWQiOiJhYmVhNDFjZC01N2U2LTQ5M2MtYmIxOC1mYjI5ZGQ1OTU0NDgifQ.mHW5xzyHEXoeVWAuSM0ol9H-Sq5jexMK0B3-svitJHI' \
+  -H 'content-length: 337' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Mission health car personal establish.","maxScore":86,"minScore":11,"description":"Evidence office moment should analysis million send. Table say fight old. Center more miss indicate yes.","estimatedTime":"6 weeks","previewFileId":"3a361872-6131-4531-86c8-df50ab197559","createdByUserId":"abea41cd-57e6-493c-bb18-fb29dd595448"}'
