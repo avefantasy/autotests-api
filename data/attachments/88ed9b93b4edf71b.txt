@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEyLTA1VDE4OjA3OjQ4LjAwMTg1NCIsInVzZXJfaWQiOiJkMDMyNTFjOC1lMjBlLTRhYTQtOGJmYS00NDI2ZGUwNzBmODgifQ.lGSTK8QuRDEYIBzcnUms5QWLpcHe-q4JyBCbADPcW7U' \
+  -H 'content-length: 390' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Consider firm teach simple.","maxScore":79,"minScore":28,"description":"Prove difference blood tonight stop. Daughter hold group less.\nSeason election show growth nature. Early world company factor society. Strategy relationship form born.","estimatedTime":"2 weeks","previewFileId":"b1a21359-0098-41eb-a620-f2006d112e91","createdByUserId":"d03251c8-e20e-4aa4-8bfa-4426de070f88"}'

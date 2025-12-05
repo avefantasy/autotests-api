@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEyLTA1VDE4OjA3OjQ2Ljc1ODI0OCIsInVzZXJfaWQiOiIwN2EzZmI2ZC1mODAwLTQzNzUtODdiNy0zZDliNGFiZTI0Y2QifQ.oxqOC6Iod6Qm8xSe8ulK4_2lZXHCYVd4AmuBasJd_FM' \
+  -H 'content-length: 431' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Term however vote class example onto international.","maxScore":60,"minScore":6,"description":"Visit these end rich bar baby long. Stand hope no.\nUp because watch sit easy even. Would almost account public need.\nWorry old head pressure happen. Sign parent whether off generation.","estimatedTime":"6 weeks","previewFileId":"d743ac89-0f6b-4330-af18-ce1ced287e7d","createdByUserId":"07a3fb6d-f800-4375-87b7-3d9b4abe24cd"}'
