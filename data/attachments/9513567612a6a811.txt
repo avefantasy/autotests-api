@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/exercises' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEyLTA1VDE2OjI0OjMxLjgxNzk3OSIsInVzZXJfaWQiOiJhNDdkNDE2OS1kZTJjLTQ3ZmQtYTY1MC05NGZiNmI2NDI3NjIifQ._euZORhs0N7pf9xOl_k1xgVpwRLoaM0KsWutzu0ufX4' \
+  -H 'content-length: 302' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Together beat eight step before factor.","courseId":"35450b59-9011-49d0-b10f-e5edc6e26c4d","maxScore":66,"minScore":17,"orderIndex":30,"description":"Know instead science material. Ok yeah book firm Republican customer. List guy clearly example program assume you.","estimatedTime":"9 weeks"}'

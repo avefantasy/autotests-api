@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEyLTA1VDE2OjI0OjMwLjYwMzQ3NyIsInVzZXJfaWQiOiJhNTkzZjgzZS0wMWU2LTRlYjQtOWYxYS1hYmY4ZjZjMjZiNDQifQ.Hi1jfCz8jY0s2iEKv28P919O7bbbJlD4dwMdD8wxR5k' \
+  -H 'content-length: 352' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Nice keep they unit what study forward.","maxScore":55,"minScore":27,"description":"There where attorney bad reveal series. Chance modern go east wish line man. Anything citizen trip actually difficult.","estimatedTime":"6 weeks","previewFileId":"03aeb27c-b0bd-4160-b6fb-53f61f252625","createdByUserId":"a593f83e-01e6-4eb4-9f1a-abf8f6c26b44"}'

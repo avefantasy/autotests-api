@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEyLTA1VDE2OjI0OjMyLjA5MDk2OCIsInVzZXJfaWQiOiIzMzViYjQ2MC1jNGMzLTQ1OGMtYjIwZS0yZTMzNjRiZmVjMjMifQ.U-myFNZW5hhFASt2RH5dubkVc40xquofFl3jRwtzQGU' \
+  -H 'content-length: 439' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Sort step list character activity few college out.","maxScore":64,"minScore":20,"description":"Even thought case study word. Some maintain impact economy line young condition.\nPurpose particular kind movie of foreign. No manage simple live former receive. Challenge travel vote per civil.","estimatedTime":"6 weeks","previewFileId":"891e0e0c-d478-4d6b-8fb3-6bb5e686c27e","createdByUserId":"335bb460-c4c3-458c-b20e-2e3364bfec23"}'

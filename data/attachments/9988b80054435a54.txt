@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEyLTA1VDE2OjI0OjMwLjg3ODE1OCIsInVzZXJfaWQiOiIxZTQyOTI5Ni0xOGM2LTRhNmUtYmE3Yy0xNThkZjljOTIxYTQifQ.YfUlGNYG1saxA65dOuQ8DBkTkVhemx4_e4qVKQVq89A' \
+  -H 'content-length: 396' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Lot occur low customer hotel agency newspaper keep.","maxScore":100,"minScore":24,"description":"Without thus doctor firm week should. Audience style chance example drug cultural. Middle center bad Mrs. Scene company however son direction nature.","estimatedTime":"4 weeks","previewFileId":"214c6d5b-b3a9-4085-a623-af5354772116","createdByUserId":"1e429296-18c6-4a6e-ba7c-158df9c921a4"}'

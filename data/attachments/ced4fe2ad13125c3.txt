@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEyLTA1VDE2OjI0OjMzLjMwMjE2NiIsInVzZXJfaWQiOiJhMzcxOGExOS1mZTc0LTQ2YTAtYTNhZC0xZDQwZDdhMWJlZDEifQ.8cWqQkEwQ5JkJQLRsEEb1gkIwaoyewvTZe4LeII6zmE' \
+  -H 'content-length: 376' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Support off how image generation.","maxScore":96,"minScore":3,"description":"Dark especially politics couple. Join concern truth imagine. College issue hit cause rise article.\nCell although wife moment. Job last shake modern.","estimatedTime":"4 weeks","previewFileId":"c2364a0a-74ec-4d00-b7fd-cd4709b3d5f6","createdByUserId":"a3718a19-fe74-46a0-a3ad-1d40d7a1bed1"}'

@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/exercises' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEyLTA1VDE2OjI0OjMyLjA5MDk2OCIsInVzZXJfaWQiOiIzMzViYjQ2MC1jNGMzLTQ1OGMtYjIwZS0yZTMzNjRiZmVjMjMifQ.U-myFNZW5hhFASt2RH5dubkVc40xquofFl3jRwtzQGU' \
+  -H 'content-length: 340' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Car speech first event part by perhaps.","courseId":"a512de34-3b97-4088-ae64-f56c5d64f2e2","maxScore":56,"minScore":21,"orderIndex":3,"description":"Form money order. Experience Democrat second.\nWay professor cause professor today. Figure create career meet. Class have baby activity argue throw good.","estimatedTime":"9 weeks"}'
