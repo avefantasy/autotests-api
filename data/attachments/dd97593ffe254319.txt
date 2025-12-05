@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEyLTA1VDE2OjMyOjU5Ljk4NzA5NSIsInVzZXJfaWQiOiI5M2U0ZTM1NS00ZTMzLTQxMDMtYTMyZC1mYTg2YWM0OWIwOGIifQ.GZ33xpMy4BynnTgRatu7ST5-JxTQipOiyPYN-K3OfQc' \
+  -H 'content-length: 341' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Perhaps anyone board concern tough ten.","maxScore":79,"minScore":14,"description":"Star floor production. Break window want. Room control serious. Commercial bring team throughout age world.","estimatedTime":"8 weeks","previewFileId":"96f91ade-da59-47b4-86e6-0f95166fa4a9","createdByUserId":"93e4e355-4e33-4103-a32d-fa86ac49b08b"}'

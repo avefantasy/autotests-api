@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEyLTA1VDE2OjMyOjU4LjU3NTc0NCIsInVzZXJfaWQiOiJiNjBkMGIyNy0xMTNlLTQyNTItYjJiMC0wZTA1MmFjNGVhMGQifQ.LrotfC9erOLjrVKc0QQe18kdDjVERgbXTSKi_u_zr0E' \
+  -H 'content-length: 320' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Growth data natural about risk sort.","maxScore":86,"minScore":9,"description":"Simple language response amount lawyer pressure staff. Organization watch check bit less.","estimatedTime":"10 weeks","previewFileId":"7c08cfcd-8fe5-4812-b7ba-fe88cb56e9f6","createdByUserId":"b60d0b27-113e-4252-b2b0-0e052ac4ea0d"}'
