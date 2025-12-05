@@ -5,41 +5,39 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-  workflow_dispatch:  # Добавить ручной запуск
+  workflow_dispatch:
 
 jobs:
   run-tests:
     runs-on: ubuntu-latest
-    
-    # Добавить таймаут для всего job
+
     timeout-minutes: 15
-    
+
     steps:
       # 1. Клонирование репозитория
       - name: Checkout repository
         uses: actions/checkout@v4
-        
+        with:
+          fetch-depth: 0  # Получаем всю историю для Allure history
+
       # 2. Установка Python
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'pip'  # Кэширование pip для ускорения
-          
+          cache: 'pip'
+
       # 3. Клонирование тестового сервера
       - name: Clone test server repository
         run: |
           git clone https://github.com/Nikita-Filonov/qa-automation-engineer-api-course.git
-          cd qa-automation-engineer-api-course
-          # Фиксация версии (если нужно)
-          # git checkout v1.0.0
-          
+
       # 4. Установка зависимостей сервера
       - name: Install server dependencies
         run: |
           cd qa-automation-engineer-api-course
           pip install -r requirements.txt
-          
+
       # 5. Запуск и проверка сервера
       - name: Start and verify test server
         env:
@@ -50,36 +48,37 @@ jobs:
           JWT_ACCESS_TOKEN_EXPIRE: 1800
           JWT_REFRESH_TOKEN_EXPIRE: 5184000
         run: |
-          # Запуск сервера в фоне
           cd qa-automation-engineer-api-course
+          
+          # Запуск сервера в фоне
           uvicorn main:app --host 0.0.0.0 --port 8000 &
           SERVER_PID=$!
           
           # Ждем, пока сервер станет доступен
           echo "Waiting for server to start..."
           for i in {1..30}; do
-            if curl -s http://localhost:8000/docs > /dev/null; then
-              echo "Server is up and running!"
+            if curl -s http://localhost:8000/docs > /dev/null 2>&1; then
+              echo "✅ Server is up and running!"
               break
             fi
             if [ $i -eq 30 ]; then
-              echo "Server failed to start within 30 seconds"
+              echo "❌ Server failed to start within 30 seconds"
+              kill $SERVER_PID 2>/dev/null || true
               exit 1
             fi
+            echo "Attempt $i/30: Waiting for server..."
             sleep 1
           done
           
-          # Сохраняем PID для последующего завершения
           echo "SERVER_PID=$SERVER_PID" >> $GITHUB_ENV
-          
+
       # 6. Установка зависимостей проекта
       - name: Install project dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          # Установить allure-pytest если нужно
           pip install allure-pytest pytest-xdist
-          
+
       # 7. Запуск тестов
       - name: Run API tests
         run: |
@@ -87,38 +86,65 @@ jobs:
             --alluredir=allure-results \
             --numprocesses=2 \
             --junitxml=test-results.xml \
-            --tb=short
-          
+            --tb=short \
+            -v
+
       # 8. Завершение сервера
       - name: Stop test server
         if: always()
         run: |
           if [ -n "$SERVER_PID" ]; then
             echo "Stopping server with PID: $SERVER_PID"
-            kill $SERVER_PID || true
+            kill $SERVER_PID 2>/dev/null || true
           fi
-          
-      # 9. Генерация отчета Allure (современный способ)
+
+      # 9. Установка Allure CLI
+      - name: Install Allure CLI
+        if: always()
+        run: |
+          # Установка Allure через npm (самый простой способ)
+          sudo apt-get update
+          sudo apt-get install -y default-jre
+          wget https://github.com/allure-framework/allure2/releases/download/2.27.0/allure-2.27.0.tgz
+          sudo tar -zxvf allure-2.27.0.tgz -C /opt/
+          sudo ln -s /opt/allure-2.27.0/bin/allure /usr/bin/allure
+          allure --version
+
+      # 10. Генерация Allure отчета
       - name: Generate Allure Report
         if: always()
-        uses: simple-elf/allure-report-action@v1.12  # Или перейти на более свежую альтернативу
-        with:
-          allure_results: allure-results
-          allure_report: allure-report
-          keep_reports: 20
+        run: |
+          # Создаем папку для отчетов
+          mkdir -p allure-report
           
-      # 10. Деплой на GitHub Pages
+          # Генерируем отчет
+          allure generate allure-results -o allure-report --clean
+          
+          # Создаем index.html для GitHub Pages
+          echo "<!DOCTYPE html>
+          <html>
+          <head>
+              <meta http-equiv='refresh' content='0; url=./allure-report/index.html' />
+              <title>Allure Report</title>
+          </head>
+          <body>
+              <p>Redirecting to <a href='./allure-report/index.html'>Allure Report</a>...</p>
+          </body>
+          </html>" > allure-report/index.html
+
+      # 11. Деплой на GitHub Pages
       - name: Deploy to GitHub Pages
-        if: always() && github.ref == 'refs/heads/main'  # Только для main ветки
-        uses: peaceiris/actions-gh-pages@v3  # Использовать v3 вместо v4 (v4 изменила API)
+        if: always() && github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: ./allure-report
-          force_orphan: true  # Очищать ветку перед публикацией
-          
-      # 11. Артефакты для отладки
-      - name: Upload test results
+          force_orphan: true
+          keep_files: false
+
+      # 12. Сохранение артефактов
+      - name: Upload test results as artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -126,4 +152,5 @@ jobs:
           path: |
             allure-results/
             test-results.xml
-          retention-days: 7
+            allure-report/
+          retention-days: 30
