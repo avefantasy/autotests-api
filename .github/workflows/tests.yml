@@ -78,22 +78,29 @@ jobs:
           sudo mv allure-2.29.0 /opt/allure
           sudo ln -s /opt/allure/bin/allure /usr/bin/allure
 
-      - name: Copy history
+      - name: Restore history
         run: |
           mkdir -p allure-history
           if [ -d "gh-pages/history" ]; then
+            echo "Found history in gh-pages, copying..."
             cp -r gh-pages/history allure-history/
+          else
+            echo "NO HISTORY FOUND"
           fi
 
-      - name: Generate Allure report
+      - name: Generate report with history
         run: |
-          mkdir -p allure-report
           allure generate allure-results -o allure-report --clean
+          
           if [ -d "allure-history/history" ]; then
+            echo "Copying history to final report..."
             cp -r allure-history/history allure-report/
           fi
+          
+          echo "--- FINAL REPORT STRUCTURE ---"
+          ls -R allure-report
 
-      - name: Deploy report to GitHub Pages
+      - name: Deploy report
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
