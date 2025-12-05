@@ -2,42 +2,32 @@ name: API tests
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
-  workflow_dispatch:
+    branches:
+      - main
 
 jobs:
   run-tests:
     runs-on: ubuntu-latest
 
-    timeout-minutes: 15
-
     steps:
-      # 1. Клонирование репозитория
-      - name: Checkout repository
+      - name: Check out repository
         uses: actions/checkout@v4
 
-      # 2. Установка Python
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
-          cache: 'pip'
+          python-version: '3.12'
 
-      # 3. Клонирование тестового сервера
       - name: Clone test server repository
-        run: |
-          git clone https://github.com/Nikita-Filonov/qa-automation-engineer-api-course.git
+        run: git clone https://github.com/Nikita-Filonov/qa-automation-engineer-api-course.git
 
-      # 4. Установка зависимостей сервера
-      - name: Install server dependencies
-        run: |
-          cd qa-automation-engineer-api-course
-          pip install -r requirements.txt
+      - name: Install test server dependencies
+        run: pip install -r qa-automation-engineer-api-course/requirements.txt
 
-      # 5. Запуск и проверка сервера
-      - name: Start and verify test server
+      - name: Start a test server
         env:
           APP_HOST: "http://localhost:8000"
           DATABASE_URL: "sqlite+aiosqlite:///./local.db"
@@ -45,122 +35,53 @@ jobs:
           JWT_SECRET_KEY: "qa-automation-engineer-api-course-secret-key"
           JWT_ACCESS_TOKEN_EXPIRE: 1800
           JWT_REFRESH_TOKEN_EXPIRE: 5184000
-        run: |
-          cd qa-automation-engineer-api-course
-          
-          # Запуск сервера в фоне
-          uvicorn main:app --host 0.0.0.0 --port 8000 &
-          SERVER_PID=$!
-          
-          # Ждем, пока сервер станет доступен
-          echo "Waiting for server to start..."
-          for i in {1..30}; do
-            if curl -s http://localhost:8000/docs > /dev/null 2>&1; then
-              echo "✅ Server is up and running!"
-              break
-            fi
-            if [ $i -eq 30 ]; then
-              echo "❌ Server failed to start within 30 seconds"
-              kill $SERVER_PID 2>/dev/null || true
-              exit 1
-            fi
-            echo "Attempt $i/30: Waiting for server..."
-            sleep 1
-          done
-          
-          echo "SERVER_PID=$SERVER_PID" >> $GITHUB_ENV
+        run: uvicorn main:app --host 0.0.0.0 --port 8000 --app-dir ./qa-automation-engineer-api-course &
 
-      # 6. Установка зависимостей проекта
-      - name: Install project dependencies
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install allure-pytest pytest-xdist
 
-      # 7. Запуск тестов
-      - name: Run API tests
+      - name: Run API tests with pytest and generate Allure results
         run: |
-          pytest -m regression \
-            --alluredir=allure-results \
-            --numprocesses=2 \
-            --junitxml=test-results.xml \
-            --tb=short \
-            -v
+          pytest -m regression --alluredir=allure-results --numprocesses=2
 
-      # 8. Завершение сервера
-      - name: Stop test server
-        if: always()
-        run: |
-          if [ -n "$SERVER_PID" ]; then
-            echo "Stopping server with PID: $SERVER_PID"
-            kill $SERVER_PID 2>/dev/null || true
-          fi
-
-      # 9. Установка Allure CLI
-      - name: Install Allure CLI
-        if: always()
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y default-jre
-          # Установка Allure из официального репозитория
-          sudo wget https://github.com/allure-framework/allure2/releases/download/2.27.0/allure-2.27.0.tgz
-          sudo tar -zxvf allure-2.27.0.tgz -C /opt/
-          sudo ln -s /opt/allure-2.27.0/bin/allure /usr/bin/allure
-
-      # 10. Подготовка Allure истории (клонируем gh-pages если существует)
-      - name: Get existing Allure history
-        if: always()
-        run: |
-          # Пробуем получить историю из ветки gh-pages
-          git fetch origin gh-pages --depth=1 || echo "No gh-pages branch found"
-          if git show-ref --quiet refs/remotes/origin/gh-pages; then
-            echo "Found existing gh-pages branch"
-            mkdir -p allure-history
-            git worktree add --checkout allure-history origin/gh-pages || true
-          else
-            echo "No existing gh-pages branch"
-          fi
-
-      # 11. Генерация Allure отчета с историей
-      - name: Generate Allure Report with history
-        if: always()
-        run: |
-          # Создаем папку для нового отчета
-          mkdir -p new-allure-report
-          
-          # Если есть история, копируем ее
-          if [ -d "allure-history/history" ]; then
-            echo "Copying existing history..."
-            cp -r allure-history/history allure-results/
-          fi
-          
-          # Генерируем отчет
-          allure generate allure-results -o new-allure-report --clean
-          
-          # Копируем историю в отчет для следующего запуска
-          if [ -d "new-allure-report/history" ]; then
-            mkdir -p allure-history
-            cp -r new-allure-report/history allure-history/
-          fi
-
-      # 12. Деплой на GitHub Pages
-      - name: Deploy Allure Report to GitHub Pages
-        if: always() && github.ref == 'refs/heads/main'
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: ./new-allure-report
-          force_orphan: false  # Важно: false для сохранения истории
-          keep_files: true     # Сохраняем старые файлы
-
-      # 13. Сохранение артефактов
-      - name: Upload test results as artifact
+      - name: Upload Allure results
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: allure-report
-          path: |
-            new-allure-report/
-            allure-results/
-          retention-days: 30
+          name: allure-results
+          path: allure-results
+
+  publish-report:
+    if: always()
+    needs: [ run-tests ]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Download Allure results
+        uses: actions/download-artifact@v4
+        with:
+          name: allure-results
+          path: allure-results
+
+      - name: Generate Allure Report with history
+        uses: simple-elf/allure-report-action@v1.12
+        if: always()
+        with:
+          allure_results: allure-results
+          allure_history: allure-history
+
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-history
