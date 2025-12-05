@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEyLTA1VDE3OjQ0OjE2LjAwNDcwMyIsInVzZXJfaWQiOiIzOGUxZWNmOS0yMThkLTRiNGQtYjllNC0wZmEyNWMyNDc2ODkifQ.NRH7keBxqiolj2xDP7LxCaYGffzDMX72qdEZEdYxs6w' \
+  -H 'content-length: 365' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Hold oil that already impact this.","maxScore":80,"minScore":11,"description":"Fall hair fast able enter reflect offer. Meet today western turn next. Specific modern boy girl open when. Every day summer performance.","estimatedTime":"7 weeks","previewFileId":"3a9e4b7c-8bf3-4d4a-bec0-6c4abd4a5d09","createdByUserId":"38e1ecf9-218d-4b4d-b9e4-0fa25c247689"}'
