@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEyLTA1VDE3OjM1OjQ5LjM1MTc4MyIsInVzZXJfaWQiOiIyZjQ1ZjgyYi0zYzRiLTQzMjctYTYwMy1lYWE5OGM3ODkzYWEifQ.Hqd7zg5qnCqODCf_ezV-ZgNYfA95y3Avz1IOHgbb9DY' \
+  -H 'content-length: 416' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Market benefit collection four race.","maxScore":66,"minScore":27,"description":"Piece PM research drop for its. Career voice society tax require campaign.\nRealize each none social cold tree clearly more. Important whose computer institution total dream great stay.","estimatedTime":"7 weeks","previewFileId":"d2a50683-fa8e-4247-94f0-856c0d1c9aa3","createdByUserId":"2f45f82b-3c4b-4327-a603-eaa98c7893aa"}'

@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/exercises' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEyLTA1VDE3OjM1OjUyLjg2MjIyMyIsInVzZXJfaWQiOiIwMDJkNjg4NS1hN2JlLTQ1NWItOTNmOS04ZTg1NjM2ODA3ZjQifQ.rIpdbzuDd5ws1hjEJrUmPpq8jqwHxpN-2yQZtJD4nS4' \
+  -H 'content-length: 307' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Student we study eat strategy into real successful.","courseId":"28f8157e-fd01-47c7-8518-d167778b6134","maxScore":74,"minScore":23,"orderIndex":92,"description":"Want defense share laugh newspaper really sure. Attorney create expect do between. Try throw to first high.","estimatedTime":"1 weeks"}'

@@ -1,8 +1,0 @@
-curl -X 'GET' \
-  'http://localhost:8000/api/v1/courses?userId=886d58e2-bc36-4b99-a5b8-14997658f04a' \
-  -H 'host: localhost:8000' \
-  -H 'accept: */*' \
-  -H 'accept-encoding: gzip, deflate' \
-  -H 'connection: keep-alive' \
-  -H 'user-agent: python-httpx/0.28.1' \
-  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEyLTA1VDE3OjMzOjA0LjU5MDM0NiIsInVzZXJfaWQiOiI4ODZkNThlMi1iYzM2LTRiOTktYTViOC0xNDk5NzY1OGYwNGEifQ.KGDqFbVqOoPE5-fcdPLIXgh2b_ECzcERWAThDKWoxcU'
