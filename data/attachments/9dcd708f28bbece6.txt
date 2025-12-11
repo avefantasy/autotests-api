@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEyLTExVDE1OjU0OjA5LjA1ODU5MyIsInVzZXJfaWQiOiJmMTQzYzU1Mi0wMWM4LTQ3ODYtOWNhOC01M2U0MTI1YTgyYjgifQ.6zD6fnk0-ya-JPIQ2i5KJ4XcZT_yYVDCbYAvzoEYXEA' \
+  -H 'content-length: 349' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Full upon phone.","maxScore":83,"minScore":7,"description":"Capital hundred person drive billion. Back pick here nor since. Thousand our up buy.\nWind somebody security. Fear interesting six perform.","estimatedTime":"9 weeks","previewFileId":"cc322198-38ba-42f9-adde-f9a80f3239bc","createdByUserId":"f143c552-01c8-4786-9ca8-53e4125a82b8"}'

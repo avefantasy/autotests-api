@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEyLTExVDE1OjU0OjA5Ljc0NTM2MCIsInVzZXJfaWQiOiJmNzE2ZGY0Ni0zZjllLTQwOTgtODgwNC1hNTljMGYzYjc3MzAifQ.xR4Pee5lwlfMmOI2BP1t9rtPk0Pf81luBdTuJor0tw0' \
+  -H 'content-length: 371' \
+  -H 'content-type: application/json' \
+  -d '{"title":"See fire indicate happen nation and.","maxScore":90,"minScore":8,"description":"Agreement skin usually student help. Himself discover two feeling.\nBeyond next in week. Hand owner American assume form check strong former.","estimatedTime":"5 weeks","previewFileId":"d2214884-5c83-47fb-9679-e73968635b0f","createdByUserId":"f716df46-3f9e-4098-8804-a59c0f3b7730"}'

@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEyLTExVDE1OjU0OjA4LjQ3MDI2NyIsInVzZXJfaWQiOiI3YTE0MDAxMi0zZDVlLTRiMDQtODIyYi1iNzEyNjRjN2M3MzQifQ.yGod6Loito_27DwjbQF__O4sMc5fXy2CB7scpfX-GvA' \
+  -H 'content-length: 343' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Too main drive success positive so.","maxScore":71,"minScore":14,"description":"At week boy black. Foreign grow owner become drop however south billion. Only discussion never away within truth.","estimatedTime":"4 weeks","previewFileId":"fd6c3a63-00b6-4bd1-88b6-311eb2f90c54","createdByUserId":"7a140012-3d5e-4b04-822b-b71264c7c734"}'

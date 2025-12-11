@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEyLTExVDE1OjU0OjA3LjgyMjQzOCIsInVzZXJfaWQiOiJmZjZjNWU0OS05NzQzLTRjMmQtODdiMS04N2QzZGJmM2IzMjcifQ.ZKN0qqZ63F9ZALRc8jhdI62p0tyogFBOTI4cmz8LHzg' \
+  -H 'content-length: 348' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Hair agent gas discuss century person none.","maxScore":93,"minScore":6,"description":"Although its against. Rather ability enter especially kid. Reflect region unit clearly tax reduce particularly.","estimatedTime":"6 weeks","previewFileId":"2b88d858-c86d-4ff9-ac56-8420980d9b9e","createdByUserId":"ff6c5e49-9743-4c2d-87b1-87d3dbf3b327"}'

@@ -1,0 +1,11 @@
+curl -X 'PATCH' \
+  'http://localhost:8000/api/v1/courses/fc695d0b-5253-4870-b826-d7e1f18a77d9' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEyLTExVDE1OjU0OjA1LjE4NzQwNiIsInVzZXJfaWQiOiI5NzFiYjdhZC00OTg1LTQwMGYtYjVjNi01N2EyNTQ2ZTIyMDAifQ.NBnKuTDJn7putS7m6Ubqf66r_B0CbKp5rp7m7csUNG0' \
+  -H 'content-length: 205' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Strategy college however drop memory.","maxScore":69,"minScore":27,"description":"Case personal thought alone education mean range. War sign through successful though.","estimatedTime":"7 weeks"}'
