@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI1LTEyLTExVDE1OjMzOjAwLjgyMTQ3MyIsInVzZXJfaWQiOiIyMjBmOGY5ZC1kZTE5LTQ1NDEtOGE4YS0xMmEwNWVkM2JkN2QifQ.iMqH5RdH2C0ltco7JcnSGkQUvj7h_0O64EZluXK48DU' \
+  -H 'content-length: 376' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Read place industry class through serious ten.","maxScore":81,"minScore":5,"description":"Remain friend against less analysis friend write. Matter turn American son owner produce training. Thought avoid professor pretty enjoy.","estimatedTime":"9 weeks","previewFileId":"a8721312-5156-4af2-b377-f00ff1c46f72","createdByUserId":"220f8f9d-de19-4541-8a8a-12a05ed3bd7d"}'
